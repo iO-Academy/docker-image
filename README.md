@@ -54,6 +54,11 @@ docker-compose down
 
 Note: Your Box will turn itself on as soon as docker is started unless you have manually shut it down.
 
+If your box has any problems, it will auto-restart itself, so sometimes it may slow down during this process. If this happens, logs will appear in:
+```
+/sites/academyServer/logs/
+```
+
 ## DB connection
 
 You can connect to your docker DB server using the below credentials:
