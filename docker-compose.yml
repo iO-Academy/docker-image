@@ -18,7 +18,7 @@ services:
     volumes:
       - ./db:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: passwor
+      MYSQL_ROOT_PASSWORD: password
     restart: unless-stopped
  
   nginx:
