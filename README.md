@@ -44,6 +44,8 @@ docker-compose up --detach
 
 This should boot 3 containers and run your image in the background.
 
+Now that your docker containers are running in the background, you may want to set docker to start upon login. You can do this by ticking `Docker Preferences > General > Start Docker Desktop when you login`
+
 You can now put all your application files in:
 ```
 /sites/academyServer/html
