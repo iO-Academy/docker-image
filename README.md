@@ -65,10 +65,13 @@ If your box has any problems, it will auto-restart itself, so sometimes it may s
 
 You can connect to your docker DB server using the below credentials:
 
-Host: 127.0.0.1
-User: root
-Password: password
-Port: 3306
+Host: `127.0.0.1`
+
+User: `root`
+
+Password: `password`
+
+Port: `3306`
 
 ## PDO connection
 
