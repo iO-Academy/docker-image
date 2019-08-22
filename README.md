@@ -94,3 +94,10 @@ To execute bash commands against your box, run the following:
 docker-compose exec php bash
 ```
 
+### Editing Docker Config
+
+When changing the docker config files, you need to rebuild the containers using this command:
+
+```
+docker-compose up --force-recreate --build
+```
