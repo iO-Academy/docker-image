@@ -3,13 +3,13 @@
 Start by creating the following directory
 
 ```
-/sites/academyServer
+~/sites/academyServer
 ```
 
 You may need to sudo this command. Once created set the permissions for the sites directory:
 
 ```
-sudo chmod -R 777 /sites
+sudo chmod -R 777 ~/sites
 ```
 
 Now we need to clone this repo into that directory, run the following command from the academyServer directory
@@ -48,7 +48,7 @@ Now that your docker containers are running in the background, you may want to s
 
 You can now put all your application files in:
 ```
-/sites/academyServer/html
+~/sites/academyServer/html
 ```
 
 To shutdown your box run:
@@ -60,7 +60,7 @@ Note: Your Box will turn itself on as soon as docker is started unless you have 
 
 If your box has any problems, it will auto-restart itself, so sometimes it may slow down during this process. If this happens, logs will appear in:
 ```
-/sites/academyServer/logs/
+~/sites/academyServer/logs/
 ```
 
 ## DB connection
