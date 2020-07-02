@@ -20,7 +20,18 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
     restart: unless-stopped
- 
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/db
+    restart: unless-stopped
+
   nginx:
     build:
       context: ./build/nginx
@@ -32,5 +43,3 @@ services:
     ports:
       - 1234:80
     restart: unless-stopped
-
-
