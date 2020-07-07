@@ -29,7 +29,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - /data/db
+      - ./mongodb:/data/db
     restart: unless-stopped
 
   nginx:
