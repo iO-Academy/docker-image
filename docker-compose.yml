@@ -22,14 +22,14 @@ services:
     restart: unless-stopped
 
   mongodb:
-    image: mongo:latest
+    image: mongo:4.2.8
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
     ports:
       - 27017:27017
     volumes:
-      - /data/db
+      - ./mongodb:/data/db
     restart: unless-stopped
 
   nginx:
