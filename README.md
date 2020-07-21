@@ -18,9 +18,7 @@ Now we need to clone this repo into that directory, run the following command fr
 git clone git@github.com:Mayden-Academy/docker-image.git .
 ```
 
-We now need to give docker permissions to run in the `/sites` folder. Click on the docker whale and select Preference > File Sharing. From here you need to add (using the + button) the `/sites` folder and then click "Apply and Restart"
-
-Once restarted, you can now turn the image on by running:
+You can now turn the image on by running:
 
 ```
 docker-compose up
