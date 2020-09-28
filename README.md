@@ -8,26 +8,32 @@ Start by creating the following directory
 
 You may need to sudo this command. Once created set the permissions for the sites directory:
 
-```
+```bash
 sudo chmod -R 777 ~/sites
 ```
 
 Now we need to clone this repo into that directory, run the following command from the academyServer directory
 
-```
+```bash
 git clone git@github.com:Mayden-Academy/docker-image.git .
+```
+
+Before starting docker, delete the `.git` folder to remove the connection with Github:
+
+```bash
+rm -rf .git
 ```
 
 You can now turn the image on by running:
 
-```
+```bash
 docker-compose up
 ```
 
 This will take a minute or two to run, once done it should finish on something that looks like the below:
 
 ```
-db_1     | Version: '5.7.26'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+mongo_1     | Version: ...
 ```
 
 You should now be able to load [http://localhost:1234](http://localhost:1234) in your browser and see a success page.
@@ -36,7 +42,7 @@ Provided you see the success page, now press ctrl+c on the running docker image.
 
 To run your docker image in the background you can run:
 
-```
+```bash
 docker-compose up --detach
 ```
 
@@ -50,7 +56,7 @@ You can now put all your application files in:
 ```
 
 To shutdown your box run:
-```
+```bash
 docker-compose down
 ```
 
@@ -82,13 +88,13 @@ All other details as above.
 
 To execute arbitrary php against your box you can run the following command:
 
-```
+```bash
 docker-compose exec php php -a
 ```
 
 To execute bash commands against your box, run the following:
 
-```
+```bash
 docker-compose exec php bash
 ```
 
@@ -96,6 +102,6 @@ docker-compose exec php bash
 
 When changing the docker config files, you need to rebuild the containers using this command:
 
-```
+```bash
 docker-compose up --force-recreate --build
 ```
