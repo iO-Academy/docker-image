@@ -67,7 +67,7 @@ If your box has any problems, it will auto-restart itself, so sometimes it may s
 ~/sites/academyServer/logs/
 ```
 
-## DB connection
+## MySQL DB connection
 
 You can connect to your docker DB server using the below credentials:
 
@@ -83,6 +83,17 @@ Port: `3306`
 
 To connect from PHP to your docker container, use `db` as the host address.
 All other details as above.
+
+## Mongo Connection
+
+Connection string for compass:  
+`mongodb://root:password@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`
+
+To connect to Mongo from Node:
+```javascript
+const url = 'mongodb://localhost:27017/{DBNAME}';
+const db = await MongoClient.connect(url)
+```
 
 ## Execute Commands
 
