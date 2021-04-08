@@ -10,17 +10,17 @@ services:
       - ./logs:/logs
       - ./build/php/site.ini:/usr/local/etc/php/conf.d/site.ini
     restart: unless-stopped
-    
+
   db:
     image: mariadb
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: password
-	volumes:
+    volumes:
       - ./db:/var/lib/mysql
     ports:
       - 3306:3306
-      
+
   mongodb:
     image: mongo:4.2.8
     environment:
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./mongodb:/data/db
     restart: unless-stopped
-    
+
   nginx:
     build:
       context: ./build/nginx
