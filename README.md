@@ -18,6 +18,12 @@ Now we need to clone this repo into that directory, run the following command fr
 git clone git@github.com:Mayden-Academy/docker-image.git .
 ```
 
+Change to the m1 branch, do this *before* the next step:
+
+```bash
+git checkout apple-m1
+```
+
 Before starting docker, delete the `.git` folder to remove the connection with Github:
 
 ```bash
