@@ -14,7 +14,7 @@ To run this docker image on Windows follow the below steps:
   - Run the following command: `wsl --install`
   - Once finished, restart your computer
 
-3. Download & install Docker decktop for windows
+3. Download & install Docker desktop for windows
   - [Download from here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
   - This will take a while, go to step 4 while this is downloading / installing
   - During the install phase it may ask you to update a WSL kernal, follow the instructions, use all the defaults
