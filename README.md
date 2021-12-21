@@ -9,7 +9,7 @@ To run this docker image on Windows follow the below steps:
   - Ensure Virtualisation is set to Enabled in the bottom right
   - If it is disabled, speak to a trainer
 
-2. Enabled WSL2
+2. Enable WSL2
   - Open the windows CMD (type CMD into the search bar and click on cmd.exe)
   - Run the following command: `wsl --install`
   - Once finished, restart your computer
