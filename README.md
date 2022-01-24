@@ -6,16 +6,24 @@ Start by creating the following directory
 ~/sites/academyServer
 ```
 
-You may need to sudo this command. Once created set the permissions for the sites directory:
+Once created set the permissions for the sites directory:
 
 ```bash
-sudo chmod -R 777 ~/sites
+chmod -R 777 ~/sites
 ```
+
+**If the above command doesn't work - try it with `sudo` at the start.** Then enter the password you use to login to your laptop.
 
 Now we need to clone this repo into that directory, run the following command from the academyServer directory
 
 ```bash
 git clone git@github.com:iO-Academy/docker-image.git .
+```
+
+**If you are running an M1 Mac,** you need to switch to the `apple-m1` branch of the repo:
+
+```bash
+git checkout apple-m1
 ```
 
 Before starting docker, delete the `.git` folder to remove the connection with Github:
