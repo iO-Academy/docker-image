@@ -1,4 +1,6 @@
-# docker-image
+# iO Academy Docker image
+
+**If you are using an M1 chip, use [this branch](https://github.com/iO-Academy/docker-image/tree/apple-m1).**
 
 Start by creating the following directory
 
