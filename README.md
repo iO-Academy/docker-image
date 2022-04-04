@@ -17,7 +17,7 @@ sudo chmod -R 777 ~/sites
 Now we need to clone this repo into that directory, run the following command from the academyServer directory
 
 ```bash
-git clone git@github.com:Mayden-Academy/docker-image.git .
+git clone git@github.com:iO-Academy/docker-image.git .
 ```
 
 Change to the m1 branch, do this *before* the next step:
@@ -91,6 +91,10 @@ Port: `3306`
 
 To connect from PHP to your docker container, use `db` as the host address.
 All other details as above.
+
+## PHPMyAdmin
+
+To use PHPMyAdmin to adminster databases open [http://localhost:8081/](http://localhost:8081/) and use the same credentials as above to log in (although there is no need to enter a host)
 
 ## Mongo Connection
 
