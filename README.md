@@ -122,6 +122,10 @@ Port: `3306`
 To connect from PHP to your docker container, use `db` as the host address.
 All other details as above.
 
+## PHPMyAdmin
+
+To use PHPMyAdmin to adminster databases open [http://localhost:8081/](http://localhost:8081/) and use the same credentials as above to log in (although there is no need to enter a host)
+
 ## Mongo Connection
 
 Connection string for compass:  
