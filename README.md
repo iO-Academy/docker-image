@@ -1,4 +1,6 @@
-# docker-image
+# iO Academy Docker image
+
+**Only use this branch if you are using an Apple M1.**
 
 Start by creating the following directory
 
