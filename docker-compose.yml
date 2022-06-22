@@ -9,8 +9,10 @@ services:
       - ./html:/var/www/html
       - ./logs:/logs
       - ./build/php/site.ini:/usr/local/etc/php/conf.d/site.ini
+    ports:
+      - "8080:8080"
     restart: unless-stopped
- 
+
   db:
     image: mysql:5.7
     ports:
