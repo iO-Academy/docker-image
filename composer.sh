@@ -8,5 +8,5 @@ FOLDER_CHECK='html'
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php composer "$1"
 else
-  echo "You need to be in the html folder!."
+  composer "$1"
 fi
