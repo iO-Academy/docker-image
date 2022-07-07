@@ -21,3 +21,14 @@ else
   echo "alias composer='~/composer.sh'" >> ~/.zshrc
   source ~/.zshrc
 fi
+
+PHP_FILE=~/php.sh
+
+if [ -f "$PHP_FILE" ]; then
+  echo "Looks like you've already ran this installer"
+else
+  cp php.sh ~
+  chmod +x ~/php.sh
+  echo "alias php='~/php.sh'" >> ~/.zshrc
+  source ~/.zshrc
+fi
