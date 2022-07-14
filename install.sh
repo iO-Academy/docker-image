@@ -54,7 +54,7 @@ if [ -f "$PHPUNIT_FILE" ]; then
   echo_warning "PHPUnit: Looks like you already have the phpunit.sh script installed"
 else
   # Move the file to the home directory
-  cp phpunit.sh ~
+  cp build/scripts/student/phpunit.sh ~
   # Make the sh file executable
   chmod +x ~/phpunit.sh
   # Did chmod work?
@@ -76,7 +76,7 @@ COMPOSER_FILE=~/composer.sh
 if [ -f "$COMPOSER_FILE" ]; then
   echo_warning "Composer: Looks like you already have the composer.sh script installed"
 else
-  cp composer.sh ~
+  cp build/scripts/student/composer.sh ~
   chmod +x ~/composer.sh
   if [ -x "$COMPOSER_FILE" ]; then
     echo "alias composer='~/composer.sh'" >> ~/.zshrc
@@ -95,7 +95,7 @@ PHP_FILE=~/php.sh
 if [ -f "$PHP_FILE" ]; then
   echo_warning "PHP: Looks like you already have the php.sh script installed"
 else
-  cp php.sh ~
+  cp build/scripts/student/php.sh ~
   chmod +x ~/php.sh
   if [ -x "$PHP_FILE" ]; then
     echo "alias php='~/php.sh'" >> ~/.zshrc
