@@ -26,6 +26,12 @@ Before starting docker, delete the `.git` folder to remove the connection with G
 rm -rf .git
 ```
 
+Now you should run the install script. This is not something you would ordinarily need to do when setting up a docker image. This is a tool we have created to make running programs installed inside of docker easier.
+
+```bash
+./install.sh
+```
+
 You can now turn the image on by running:
 
 ```bash
