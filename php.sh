@@ -11,6 +11,7 @@ COLOUR_OFF='\033[0m'
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php php "$1"
 else
-  echo "${RED}Error: You must be in the html folder to run this command${COLOUR_OFF}"
+  echo "Local version"
+  php "$1"
 fi
 
