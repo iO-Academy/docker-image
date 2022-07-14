@@ -45,6 +45,13 @@ echo_fail () {
   fi
 }
 
+# Set the path based on whether or not we want a trainer or student install
+if [[ "$1" == "trainer" ]]; then
+  SCRIPT_PATH=build/scripts/trainer
+else
+  SCRIPT_PATH=build/scripts/student
+fi
+
 echo "PHPUnit: Attempting to install the phpunit.sh helper script"
 
 PHPUNIT_FILE=~/phpunit.sh
@@ -54,7 +61,7 @@ if [ -f "$PHPUNIT_FILE" ]; then
   echo_warning "PHPUnit: Looks like you already have the phpunit.sh script installed"
 else
   # Move the file to the home directory
-  cp build/scripts/student/phpunit.sh ~
+  cp "$SCRIPT_PATH/phpunit.sh" ~
   # Make the sh file executable
   chmod +x ~/phpunit.sh
   # Did chmod work?
@@ -76,7 +83,7 @@ COMPOSER_FILE=~/composer.sh
 if [ -f "$COMPOSER_FILE" ]; then
   echo_warning "Composer: Looks like you already have the composer.sh script installed"
 else
-  cp build/scripts/student/composer.sh ~
+  cp "$SCRIPT_PATH/composer.sh" ~
   chmod +x ~/composer.sh
   if [ -x "$COMPOSER_FILE" ]; then
     echo "alias composer='~/composer.sh'" >> ~/.zshrc
@@ -95,7 +102,7 @@ PHP_FILE=~/php.sh
 if [ -f "$PHP_FILE" ]; then
   echo_warning "PHP: Looks like you already have the php.sh script installed"
 else
-  cp build/scripts/student/php.sh ~
+  cp "$SCRIPT_PATH/php.sh" ~
   chmod +x ~/php.sh
   if [ -x "$PHP_FILE" ]; then
     echo "alias php='~/php.sh'" >> ~/.zshrc
