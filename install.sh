@@ -110,6 +110,8 @@ fi
 # If any of the installs ran, use exec to reload zsh
 if $INSTALLED; then
     echo_success "Install complete" true
+    # source doesn't work here - shell scripts run in a separate shell so source won't
+    # actually effect the current terminal
     exec /bin/zsh
 else
   if $ERROR; then
