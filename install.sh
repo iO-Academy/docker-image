@@ -107,11 +107,10 @@ else
   fi
 fi
 
-# If any of the installs ran, source ~/.zshrc
+# If any of the installs ran, use exec to reload zsh
 if $INSTALLED; then
-    echo "Sourcing .zshrc"
-    source ~/.zshrc
     echo_success "Install complete" true
+    exec /bin/zsh
 else
   if $ERROR; then
     echo_fail "Error: Install failed" true
