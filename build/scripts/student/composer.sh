@@ -15,6 +15,6 @@ if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   # Execute the command through docker
   docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php composer "$1"
 else
-  # Otherwise we're outside the html folder, so run the original command
+  # Otherwise we're outside the html folder, so for students, display an error message
   echo "${RED}Error: You must be in the html folder to run this command${COLOUR_OFF}"
 fi
