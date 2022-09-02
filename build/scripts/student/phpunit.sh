@@ -9,7 +9,7 @@ RED='\033[0;31m'
 COLOUR_OFF='\033[0m'
 
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
-  DOCKER_COMMAND="docker exec -ti -w /var/www/$DOCKER_PATH academy-php phpunit $*"
+  DOCKER_COMMAND="docker exec -w /var/www/$DOCKER_PATH academy-php phpunit $*"
   eval $DOCKER_COMMAND
 else
   echo "${RED}Error: You must be in the html folder to run this command${COLOUR_OFF}"

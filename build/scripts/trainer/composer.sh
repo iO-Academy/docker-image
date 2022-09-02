@@ -7,13 +7,11 @@ WD=$(pwd)
 DOCKER_PATH=$(sed 's/^.*\(html.*\).*$/\1/' <<<"$WD")
 FOLDER_CHECK='html'
 
-RED='\033[0;31m'
-COLOUR_OFF='\033[0m'
-
 # Make sure the current working directory is actually in docker
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   # Execute the command through docker
-  docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php composer "$*"
+  DOCKER_COMMAND="docker exec -ti -w /var/www/$DOCKER_PATH academy-php composer $*"
+  eval $DOCKER_COMMAND
 else
   # Otherwise we're outside the html folder, so for trainers, run the original command
   echo "Local version"
