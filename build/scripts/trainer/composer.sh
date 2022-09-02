@@ -17,5 +17,5 @@ if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
 else
   # Otherwise we're outside the html folder, so for trainers, run the original command
   echo "Local version"
-  composer "$1"
+  composer "$*"
 fi

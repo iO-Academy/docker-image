@@ -12,6 +12,6 @@ if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php php "$*"
 else
   echo "Local version"
-  php "$1"
+  php "$*"
 fi
 

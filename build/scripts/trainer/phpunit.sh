@@ -12,6 +12,6 @@ if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   docker exec -w "/var/www/$DOCKER_PATH"  academy-php phpunit "$*"
 else
   echo "Local version"
-  phpunit "$1"
+  phpunit "$*"
 fi
 
