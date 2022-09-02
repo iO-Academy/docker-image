@@ -13,7 +13,8 @@ COLOUR_OFF='\033[0m'
 # Make sure the current working directory is actually in docker
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   # Execute the command through docker
-  docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php composer "$*"
+  DOCKER_COMMAND="docker exec -ti -w /var/www/$DOCKER_PATH academy-php composer $*"
+  eval $DOCKER_COMMAND
 else
   # Otherwise we're outside the html folder, so for students, display an error message
   echo "${RED}Error: You must be in the html folder to run this command${COLOUR_OFF}"
