@@ -9,7 +9,7 @@ RED='\033[0;31m'
 COLOUR_OFF='\033[0m'
 
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
-  docker exec -w "/var/www/$DOCKER_PATH"  academy-php phpunit "$1"
+  docker exec -w "/var/www/$DOCKER_PATH"  academy-php phpunit "$*"
 else
   echo "Local version"
   phpunit "$1"

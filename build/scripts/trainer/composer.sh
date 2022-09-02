@@ -13,7 +13,7 @@ COLOUR_OFF='\033[0m'
 # Make sure the current working directory is actually in docker
 if [[ "$DOCKER_PATH" == *"$FOLDER_CHECK"* ]]; then
   # Execute the command through docker
-  docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php composer "$1"
+  docker exec -ti -w "/var/www/$DOCKER_PATH" academy-php composer "$*"
 else
   # Otherwise we're outside the html folder, so for trainers, run the original command
   echo "Local version"
