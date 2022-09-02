@@ -1,6 +1,7 @@
 # iO Academy Docker image
 
 **Only use this branch if you are using an Apple M1.**
+**If you are using an M1 chip, use [this branch](https://github.com/iO-Academy/docker-image/tree/apple-m1).**
 
 Start by creating the following directory
 
@@ -30,6 +31,12 @@ Before starting docker, delete the `.git` folder to remove the connection with G
 
 ```bash
 rm -rf .git
+```
+
+Now you should run the install script. This is not something you would ordinarily need to do when setting up a docker image. This is a tool we have created to make running programs installed inside of docker easier.
+
+```bash
+./install.sh
 ```
 
 You can now turn the image on by running:
