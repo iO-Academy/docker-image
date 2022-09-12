@@ -1,6 +1,7 @@
 # iO Academy Docker image
 
-**If you are using an M1 chip, use [this branch](https://github.com/iO-Academy/docker-image/tree/apple-m1).**
+***!!!  Note:*** **If you are using an M1 chip, use [the M1 branch of these instructions](https://github.com/iO-Academy/docker-image/tree/apple-m1).**  ***!!!***
+
 
 Start by creating the following directory
 
@@ -8,13 +9,15 @@ Start by creating the following directory
 ~/sites/academyServer
 ```
 
-You may need to sudo this command. Once created set the permissions for the sites directory:
+Once created set the permissions for the sites directory:
 
 ```bash
-sudo chmod -R 777 ~/sites
+chmod -R 777 ~/sites
 ```
 
-Now we need to clone this repo into that directory, run the following command from the academyServer directory
+( You may need to sudo this command: `sudo chmod -R 777 ~/sites` )
+
+Now we need to clone this repo into that directory. Run the following command from within the academyServer directory:
 
 ```bash
 git clone git@github.com:iO-Academy/docker-image.git .
@@ -54,9 +57,9 @@ To run your docker image in the background you can run:
 docker-compose up --detach
 ```
 
-This should boot 3 containers and run your image in the background.
+This should boot 5 containers and run your image in the background.
 
-Now that your docker containers are running in the background, you may want to set docker to start upon login. You can do this by ticking `Docker Preferences > General > Start Docker Desktop when you login`
+Now that your docker containers are running in the background, you may want to set docker to start upon login. You can do this by ticking `Docker Settings (cog) > General > Start Docker Desktop when you login`
 
 You can now put all your application files in:
 ```
