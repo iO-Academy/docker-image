@@ -18,7 +18,7 @@ sudo chmod -R 777 ~/sites
 Now we need to clone this repo into that directory, run the following command from the academyServer directory
 
 ```bash
-git clone git@github.com:iO-Academy/docker-image.git .
+git clone https://github.com/iO-Academy/docker-image.git .
 ```
 
 Change to the m1 branch, do this *before* the next step:
