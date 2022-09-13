@@ -20,7 +20,7 @@ chmod -R 777 ~/sites
 Now we need to clone this repo into that directory. Run the following command from within the academyServer directory:
 
 ```bash
-git clone git@github.com:iO-Academy/docker-image.git .
+git clone https://github.com/iO-Academy/docker-image.git .
 ```
 
 Before starting docker, delete the `.git` folder to remove the connection with Github:
