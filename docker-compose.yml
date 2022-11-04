@@ -15,15 +15,15 @@ services:
     restart: unless-stopped
 
   db:
-    image: mysql:5.7
+    image: mariadb
+    restart: unless-stopped
     container_name: academy-mysql
-    ports:
-      - 127.0.0.1:3306:3306
-    volumes:
-      - ./db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
-    restart: unless-stopped
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - 3306:3306
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
