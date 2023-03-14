@@ -42,7 +42,7 @@ docker-compose up
 This will take a minute or two to run, once done it should finish on something that looks like the below:
 
 ```
-mongo_1     | Version: ...
+academy-mysql  | Version: ...MariaDB...
 ```
 
 You should now be able to load [http://localhost:1234](http://localhost:1234) in your browser and see a success page.
