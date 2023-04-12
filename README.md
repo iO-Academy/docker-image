@@ -1,6 +1,15 @@
 # iO Academy Docker image
 
-**If you are using an M1 chip, use [this branch](https://github.com/iO-Academy/docker-image/tree/apple-m1).**
+#### For trainers only
+
+Start by turning off all your existing boxes. Then run the 
+`docker-destroy-all.sh` script from `~/sites/academyServer` using the 
+below command, this will destroy and wipe **ALL* docker environments on 
+your computer to start from scratch
+
+```bash
+./docker-destroy-all.sh
+```
 
 Start by creating the following directory
 
