@@ -114,6 +114,25 @@ else
   fi
 fi
 
+echo "STOP: Attempting to install the stop.sh helper script"
+
+STOP_FILE=~/stop.sh
+
+if [ -f "$STOP_FILE" ]; then
+  echo_warning "STOP: Looks like you already have the stop.sh script installed"
+else
+  cp "$SCRIPT_PATH/stop.sh" ~
+  chmod +x ~/stop.sh
+  if [ -x "$STOP_FILE" ]; then
+    echo "alias stop='~/stop.sh'" >> ~/.zshrc
+    INSTALLED=true
+    echo_success "STOP: stop.sh installed successfully"
+  else
+    ERROR=true
+    echo_fail "STOP: Error unable to make stop.sh executable"
+  fi
+fi
+
 # If any of the installs ran, use exec to reload zsh
 if $INSTALLED; then
     echo_success "Install complete" true
