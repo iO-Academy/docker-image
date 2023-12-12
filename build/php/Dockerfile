@@ -1,6 +1,6 @@
 FROM php:8.2-fpm
 RUN apt-get update \
-    && apt-get install -y zlib1g-dev libxml2-dev libssl-dev libzip-dev
+    && apt-get install -y zlib1g-dev libxml2-dev libssl-dev libzip-dev psmisc
 RUN docker-php-ext-install -j$(nproc) pdo_mysql
 RUN docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) bcmath
