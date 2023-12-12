@@ -108,6 +108,14 @@ const url = 'mongodb://localhost:27017/{DBNAME}';
 const db = await MongoClient.connect(url)
 ```
 
+## Stopping processes running on a specific port
+
+To kill a process using a port, for example a Slim app, you can run the following command:
+
+```bash
+stop 8080
+```
+
 ## Execute Commands
 
 To execute arbitrary php against your box you can run the following command:
