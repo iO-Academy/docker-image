@@ -12,6 +12,12 @@ services:
       - ./build/php/site.ini:/usr/local/etc/php/conf.d/site.ini
     ports:
       - "8080:8080"
+      - "8081:8081"
+      - "8082:8082"
+      - "8083:8083"
+      - "8084:8084"
+      - "8085:8085"
+      - "8000:8000"
     restart: unless-stopped
 
   db:
