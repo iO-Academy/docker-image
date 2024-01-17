@@ -42,7 +42,7 @@ services:
       PMA_ARBITRARY: 1
     restart: unless-stopped
     ports:
-      - 8081:80
+      - 8086:80
 
 
   mongodb:

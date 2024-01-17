@@ -140,6 +140,35 @@ else
   echo_success "PHP: Alias added successfully"
 fi
 
+echo "STOP: Attempting to install the stop. helper script"
+
+STOP_FILE=~/stop.sh
+
+if [ -f "$STOP_FILE" ]; then
+  echo_warning "STOP: Looks like you already have the stop.sh script installed"
+else
+  cp "$SCRIPT_PATH/stop.sh" ~
+  chmod +x ~/stop.sh
+  if [ -x "$STOP_FILE" ]; then
+    INSTALLED=true
+    echo_success "STOP: stop.sh installed successfully"
+  else
+    ERROR=true
+    echo_fail "STOP: Error unable to make stop.sh executable"
+  fi
+fi
+
+# Checks to see if the alias already exists
+if grep -qF "alias stop='~/stop.sh'" ~/.zshrc; then
+  echo_warning "STOP: .zshrc alias already setup"
+else
+  # Add an alias to .zshrc
+  echo "alias stop='~/stop.sh'" >> ~/.zshrc
+  # Indicate that the .zshrc file needs to be reloaded
+  INSTALLED=true
+  echo_success "STOP: Alias added successfully"
+fi
+
 
 # If any of the installs ran, use exec to reload zsh
 if $INSTALLED; then
