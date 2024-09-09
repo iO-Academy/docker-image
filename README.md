@@ -1,9 +1,8 @@
 # iO Academy Docker image
 
-
 Start by creating the following directory
 
-```
+```bash
 ~/sites/academyServer
 ```
 
@@ -36,12 +35,12 @@ Now you should run the install script. This is not something you would ordinaril
 You can now turn the image on by running:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 This will take a minute or two to run, once done it should finish on something that looks like the below:
 
-```
+```txt
 academy-mysql  | Version: ...MariaDB...
 ```
 
@@ -52,7 +51,7 @@ Provided you see the success page, now press ctrl+c on the running docker image.
 To run your docker image in the background you can run:
 
 ```bash
-docker-compose up --detach
+docker compose up --detach
 ```
 
 This should boot 5 containers and run your image in the background.
@@ -60,19 +59,22 @@ This should boot 5 containers and run your image in the background.
 Now that your docker containers are running in the background, you may want to set docker to start upon login. You can do this by ticking `Docker Settings (cog) > General > Start Docker Desktop when you login`
 
 You can now put all your application files in:
-```
+
+```txt
 ~/sites/academyServer/html
 ```
 
 To shutdown your box run:
+
 ```bash
-docker-compose down
+docker compose down
 ```
 
 Note: Your Box will turn itself on as soon as docker is started unless you have manually shut it down.
 
 If your box has any problems, it will auto-restart itself, so sometimes it may slow down during this process. If this happens, logs will appear in:
-```
+
+```bash
 ~/sites/academyServer/logs/
 ```
 
@@ -103,7 +105,8 @@ Connection string for compass:
 `mongodb://root:password@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`
 
 To connect to Mongo from Node:
-```javascript
+
+```js
 const url = 'mongodb://localhost:27017/{DBNAME}';
 const db = await MongoClient.connect(url)
 ```
