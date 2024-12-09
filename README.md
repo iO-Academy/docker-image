@@ -12,30 +12,50 @@ To use this docker image on Windows follow the below steps:
 
 2. Enable WSL2
 
-- Open the windows CMD (type CMD into the search bar and click on cmd.exe)
-- Run the following command: `wsl --install`
-- Once finished, restart your computer
+- Open Powershell or Windows Command Prompt from the start menu.
+  - In Windows 11 this is done from the Windows Terminal app.
+  - In earlier editions of Windows, these are their own apps unless you have [manually installed Windows Terminal](https://learn.microsoft.com/en-gb/windows/terminal/install).
+- Run the command `wsl --install`.
+- This will install WSL2 and the Ubuntu distribution of Linux
+- Once you get a prompt back, check that WSL works by running `wsl`. This should launch your linux instalation.
+- You should be asked to set a password for WSL
+- Done! You may be prompted to restart your PC.
+
+[For troubleshooting, try the official instructions here.](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 3. Download & install Docker desktop for windows
 
-- [Download from here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+- [Download from here](https://docs.docker.com/desktop/setup/install/windows-install/)
 - This will take a while, go to step 4 while this is downloading / installing
-- During the install phase it may ask you to update a WSL kernal, follow the instructions, use all the defaults
+- During the install it may ask you to update the WSL kernel, follow the instructions, use all the defaults
 
-4. Download gitbash
+4. Download & install Git for Windows
 
 - [Download from here](https://git-scm.com/downloads)
-- Once installed, use this as your terminal window
-- Windows CMD is awful, git bash is similar to mac terminal
-- No, it doesnt auto-complete with tab, sorry
+- You need this to be able to use Git in Windows
+- Using the defaults is fine
 
 4b. Set up your SSH key to github
 
 - This step is optional but recommended. You will need to do it later anyway
-- Follow the same guide you did in the academy, but for windows
-- [Guide here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [Follow GitHub's guide, this time for windows instead of mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-5. Your ready to follow the steps below.
+- It is a good idea to then follow the guide *again*, for your WSL installation
+- This time, follow the instructions for Linux, except:
+- Do not generate a new SSH key. Copy the key you generated for your windows PC from `C:\Users\<YOUR_USERNAME>\.ssh` into the WSL installation's `~/.ssh` (you should make this directory if it doesn't already exist)
+- Then follow the linux instructions to [add the SSH key to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#adding-your-ssh-key-to-the-ssh-agent)
+- To ensure that this SSH key is always used for GitHub in WSL we must create an SSH config
+  - In WSL, `touch ~/.ssh/config`
+  - `nano ~/.ssh/config`
+  - Paste in the following:
+
+  ```txt
+  Host github.com
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/<YOUR_SSH_PRIVATE_KEY_FILE>
+  ```
+
+5. You're ready to follow the steps below.
 
 - Maybe restart your computer? Windows likes a good off and on before big tasks.
 
