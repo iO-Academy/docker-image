@@ -1,37 +1,43 @@
 # Windows set-up
 
-To run this docker image on Windows follow the below steps:
+To use this docker image on Windows follow the below steps:
 
 1. Check your CPU has virtualisation enabled
-  - Open Task Manager (search task manager from the launch bar)
-  - Click more details or advanced settings in the bottom right
-  - Navigate to the Performance tab
-  - Ensure Virtualisation is set to Enabled in the bottom right
-  - If it is disabled, speak to a trainer
+
+- Open Task Manager (search task manager from the launch bar)
+- Click more details or advanced settings in the bottom right
+- Navigate to the Performance tab
+- Ensure Virtualisation is set to Enabled in the bottom right
+- If it is disabled, speak to a trainer
 
 2. Enable WSL2
-  - Open the windows CMD (type CMD into the search bar and click on cmd.exe)
-  - Run the following command: `wsl --install`
-  - Once finished, restart your computer
+
+- Open the windows CMD (type CMD into the search bar and click on cmd.exe)
+- Run the following command: `wsl --install`
+- Once finished, restart your computer
 
 3. Download & install Docker desktop for windows
-  - [Download from here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
-  - This will take a while, go to step 4 while this is downloading / installing
-  - During the install phase it may ask you to update a WSL kernal, follow the instructions, use all the defaults
+
+- [Download from here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+- This will take a while, go to step 4 while this is downloading / installing
+- During the install phase it may ask you to update a WSL kernal, follow the instructions, use all the defaults
 
 4. Download gitbash
-  - [Download from here](https://git-scm.com/downloads)
-  - Once installed, use this as your terminal window
-  - Windows CMD is awful, git bash is similar to mac terminal
-  - No, it doesnt auto-complete with tab, sorry
+
+- [Download from here](https://git-scm.com/downloads)
+- Once installed, use this as your terminal window
+- Windows CMD is awful, git bash is similar to mac terminal
+- No, it doesnt auto-complete with tab, sorry
 
 4b. Set up your SSH key to github
-  - This step is optional but recommended. You will need to do it later anyway
-  - Follow the same guide you did in the academy, but for windows
-  - [Guide here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+- This step is optional but recommended. You will need to do it later anyway
+- Follow the same guide you did in the academy, but for windows
+- [Guide here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 5. Your ready to follow the steps below.
-  - Maybe restart your computer? Windows likes a good off and on before big tasks.
+
+- Maybe restart your computer? Windows likes a good off and on before big tasks.
 
 # docker-image
 
@@ -82,6 +88,7 @@ This should boot your docker containers and run your image in the background.
 Now that your docker containers are running in the background, you may want to set docker to start upon login. You can do this by ticking `Docker Preferences > General > Start Docker Desktop when you login`
 
 You can now put all your application files in:
+
 ```
 ~/sites/academyServer/html
 ```
@@ -92,8 +99,8 @@ You will also want to download all the programs in in prep course document (exce
 
 #### Done. Everything from here on works as close to a Mac as we can get it
 
-
 To shutdown your box run:
+
 ```bash
 docker-compose down
 ```
@@ -101,6 +108,7 @@ docker-compose down
 Note: Your Box will turn itself on as soon as docker is started unless you have manually shut it down.
 
 If your box has any problems, it will auto-restart itself, so sometimes it may slow down during this process. If this happens, logs will appear in:
+
 ```
 ~/sites/academyServer/logs/
 ```
@@ -132,6 +140,7 @@ Connection string for compass:
 `mongodb://root:password@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`
 
 To connect to Mongo from Node:
+
 ```javascript
 const url = 'mongodb://localhost:27017/{DBNAME}';
 const db = await MongoClient.connect(url)
